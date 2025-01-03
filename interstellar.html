@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar - Film Sayfası</title>
+    <link rel="stylesheet" href="tasarım.css"> <!-- CSS dosyasını bağla -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #444;
+            color: white;
+            padding: 15px;
+        }
+        .movie-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .movie-trailer {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .trailer-video {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+        }
+        .like-dislike {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .like-dislike button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .like-dislike button:hover {
+            background-color: #666;
+        }
+        .comments-section {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Interstellar - Film Sayfası</h1>
+</header>
+
+<div class="movie-container">
+    <!-- YouTube Fragmanı -->
+    <div class="movie-trailer">
+        <h2>Film Fragmanı</h2>
+        <iframe class="trailer-video" src="https://www.youtube.com/embed/zSWdZVtXT7E" allowfullscreen></iframe>
+    </div>
+
+    <!-- Beğen ve Beğenme Butonları -->
+    <div class="like-dislike">
+        <button onclick="likeFilm()">Beğen</button>
+        <button onclick="dislikeFilm()">Beğenme</button>
+    </div>
+
+    <!-- Disqus Yorum Alanı -->
+    <div class="comments-section">
+        <h2>Yorumlar</h2>
+        <div id="disqus_thread"></div>
+        <script>
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    </div>
+</div>
+
+<script>
+    function likeFilm() {
+        alert("Filmi Beğendiniz!");
+    }
+    
+    function dislikeFilm() {
+        alert("Filmi Beğenmediniz!");
+    }
+</script>
+
+</body>
+</html>
