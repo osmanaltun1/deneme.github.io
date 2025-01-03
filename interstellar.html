@@ -79,11 +79,19 @@
         <h2>Yorumlar</h2>
         <div id="disqus_thread"></div>
         <script>
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://your-disqus-shortname.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
+            /**
+             * Disqus yorumlarının yüklenmesi için gerekli olan kod.
+             */
+            var disqus_config = function () {
+                this.page.url = window.location.href;  // Sayfa URL'si
+                this.page.identifier = window.location.pathname; // Sayfa identifier (benzersiz)
+            };
+
+            (function() {  // Disqus yükleme kodu
+                var script = document.createElement('script'); 
+                script.src = 'https://your-disqus-shortname.disqus.com/embed.js';
+                script.setAttribute('data-timestamp', +new Date());
+                (document.head || document.body).appendChild(script);
             })();
         </script>
     </div>
