@@ -1,146 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tasarım.css">
-    <title>Film Sitesi</title>
+    <title>Burak Taşkan - Profesyonel CV</title>
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            padding: 0;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
         }
 
         header {
-            text-align: center;
-            background-color: #444;
+            background-color: #007acc;
             color: white;
-            padding: 10px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin: 10px 0 0;
         }
 
         .container {
-            display: flex;
-            margin: 0 auto;
-            max-width: 1200px;
-        }
-
-        main {
-            flex: 3;
+            width: 90%;
+            max-width: 1100px;
+            margin: 40px auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 sütun yap */
-            gap: 20px; /* Aralıklar */
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .section {
+            background: white;
             padding: 20px;
-        }
-
-        aside {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .film-option {
-            background-color: #fff;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .film-option img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .film-option:hover {
-            transform: scale(1.05);
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
         }
 
-        .film-title {
-            margin-top: 5px;
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section ul li {
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+        .skill {
+            background: #f4f4f9;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
             font-weight: bold;
         }
 
-        /* Kategoriler */
-        .categories {
+        footer {
             text-align: center;
-            padding: 10px 0;
-            background-color: #eee;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
+            padding: 20px;
+            background: #007acc;
+            color: white;
+            margin-top: 40px;
         }
 
-        .categories h2 {
-            margin-bottom: 10px;
+        footer p {
+            margin: 0;
         }
 
-        .category-button {
-            display: inline-block;
-            margin: 5px;
-            padding: 10px 20px;
-            background-color: #444;
+        .contact {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #007acc;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact input, .contact textarea, .contact button {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact button {
+            background-color: #007acc;
             color: white;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
             transition: background-color 0.3s;
         }
 
-        .category-button:hover {
-            background-color: #666;
+        .contact button:hover {
+            background-color: #005f99;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about {
+                grid-column: span 2;
+            }
         }
     </style>
 </head>
 <body>
-    <script src="jss.js"></script>
-    <header>
-        <h1>Basit Film Sitesi</h1>
-    </header>
 
-    <div class="categories">
-        <h2>Kategoriler</h2>
-        <button class="category-button">Aksiyon</button>
-        <button class="category-button">Komedi</button>
-        <button class="category-button">Dram</button>
-        <button class="category-button">Bilim Kurgu</button>
-        <button class="category-button">Korku</button>
-        <button class="category-button">Animasyon</button>
+<header>
+    <h1>Burak Taşkan</h1>
+    <p>Bilgi İşlem Müdürü | Süral Saray Hotel | buraktaskan@example.com | +90 555 555 5555</p>
+</header>
+
+<div class="container">
+    <!-- Profile Section -->
+    <div class="section profile">
+        <img src="Ekran görüntüsü 2025-01-04 203149.png" alt="Burak Taşkan Profil Fotoğrafı">
+        <h2>Hakkımda</h2>
+        <p>Süral Saray Hotel'de bilgi işlem müdürü olarak çalışan, teknoloji ve ekip yönetiminde uzmanlaşmış bir profesyonel.</p>
     </div>
 
-    <div class="container">
-        <main>
-            <div class="film-option" onclick="openFilmPage('interstellar.html')">
-                <img src="images/150664.jpg" alt="Aksiyon">
-                <div class="film-title">Interstellar</div>
-            </div>
-            <div class="film-option">
-                <img src="images/21032481_20130827213759056.jpg" alt="Film 2">
-                <div class="film-title">Arınma Gecesi</div>
-            </div>
-            <div class="film-option">
-                <img src="images/cok-yakinda-sari-kupe-4453-71-B.png" alt="Film 3">
-                <div class="film-title">Film 3</div>
-            </div>
-            <div class="film-option">
-                <img src="images/cok-yakinda-sari-kupe-4453-71-B.png" alt="Film 4">
-                <div class="film-title">Film 4</div>
-            </div>
-            <div class="film-option">
-                <img src="images/cok-yakinda-sari-kupe-4453-71-B.png" alt="Film 5">
-                <div class="film-title">Film 5</div>
-            </div>
-            <div class="film-option">
-                <img src="images/cok-yakinda-sari-kupe-4453-71-B.png" alt="Film 6">
-                <div class="film-title">Film 6</div>
-            </div>
-        </main>
-        <aside>
-            <div style="width: 200px; height: 600px; background-color: #ddd; display: flex; align-items: center; justify-content: center; border: 1px dashed #aaa;">
-                Reklam Alanı
-            </div>
-        </aside>
+    <!-- Eğitim Bölümü -->
+    <div class="section">
+        <h2>Eğitim</h2>
+        <ul>
+            <li><strong>Bilgisayar Mühendisliği Lisansı</strong> - Örnek Üniversite (Mezuniyet Yılı)</li>
+            <li><strong>İlgili Dersler:</strong> Veri Yapıları, Algoritmalar, Ağ Yönetimi</li>
+        </ul>
     </div>
+
+    <!-- İş Deneyimi Bölümü -->
+    <div class="section">
+        <h2>İş Deneyimi</h2>
+        <ul>
+            <li>
+                <strong>Bilgi İşlem Müdürü</strong> - <strong>Süral Saray Hotel</strong> (Başlama Tarihi - Devam Ediyor)
+                <p>Otelin tüm bilgi işlem süreçlerini yöneten ve teknik sorunlara hızlı çözümler sunan bir lider.</p>
+            </li>
+            <li>
+                <strong>Teknik Destek Uzmanı</strong> - <strong>Önceki Şirket</strong> (Başlama Tarihi - Bitiş Tarihi)
+                <p>Son kullanıcı desteği ve ağ altyapısı konularında çalıştı.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Yetenekler Bölümü -->
+    <div class="section">
+        <h2>Yetenekler</h2>
+        <div class="skills">
+            <div class="skill">Ağ Yönetimi</div>
+            <div class="skill">Windows Server</div>
+            <div class="skill">Sorun Çözme</div>
+            <div class="skill">Ekip Yönetimi</div>
+        </div>
+    </div>
+
+    <!-- Projeler Bölümü -->
+    <div class="section">
+        <h2>Projeler</h2>
+        <ul>
+            <li>
+                <strong>Otel Yönetim Sistemi</strong>
+                <p>Otel içi süreçlerin dijitalleşmesini sağlayan kapsamlı bir sistem geliştirdi.</p>
+            </li>
+            <li>
+                <strong>Ağ Güvenliği Güncellemeleri</strong>
+                <p>Otel ağlarının güvenliğini artırmak için firewall ve antivirüs yapılandırmaları gerçekleştirdi.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- İletişim Bölümü -->
+    <div class="section contact">
+        <h2>Benimle İletişime Geçin</h2>
+        <form>
+            <input type="text" name="name" placeholder="Adınız" required>
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+            <textarea name="message" rows="5" placeholder="Mesajınız" required></textarea>
+            <button type="submit">Mesaj Gönder</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Burak Taşkan.</p>
+</footer>
+
 </body>
 </html>
