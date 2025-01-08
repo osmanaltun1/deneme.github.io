@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
     <style>
         /* Film div'leri başlangıçta hepsi görünsün */
         .film-option {
-            display: block; /* Sayfa yüklendiğinde tüm film div'lerini göster */
+            display: block;
+            /* Sayfa yüklendiğinde tüm film div'lerini göster */
         }
 
         /* Seçilen kategoriye ait film div'lerini göster */
@@ -22,7 +24,18 @@
             display: none;
         }
     </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "qpUQlh7IDKssKfF6v",
+            });
+        })();
+    </script>
+
 </head>
+
 <body>
     <script src="scriptler.js"></script>
     <header>
@@ -75,7 +88,8 @@
 
         </main>
         <aside>
-            <div style="width: 200px; height: 600px; background-color: #ddd; display: flex; align-items: center; justify-content: center; border: 1px dashed #aaa;">
+            <div
+                style="width: 200px; height: 600px; background-color: #ddd; display: flex; align-items: center; justify-content: center; border: 1px dashed #aaa;">
                 Reklam Alanı
             </div>
         </aside>
@@ -88,37 +102,7 @@
         <textarea id="filmSuggestion" placeholder="Film önerinizi buraya yazın..." required></textarea>
         <button class="submit-button" onclick="sendEmail()">Gönder</button>
     </div>
-
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function() {
-            emailjs.init("qpUQlh7IDKssKfF6v"); 
-        })();
-
-        function sendEmail() {
-            const fromName = document.getElementById("fromName").value;
-            const suggestion = document.getElementById("filmSuggestion").value;
-
-            if (!fromName || !suggestion) {
-                alert("Lütfen tüm alanları doldurduğunuzdan emin olun!");
-                return;
-            }
-
-            const templateParams = {
-                from_name: fromName,
-                message: suggestion,
-                to_email: "osmanaltunn18@gmail.com", 
-            };
-
-            emailjs.send('service_d0b5gyq', 'template_n24svgm', templateParams)
-                .then(function(response) {
-                    alert('Mesajınız başarıyla gönderildi!');
-                }, function(error) {
-                    alert('Mesaj gönderilemedi. Hata: ' + error.text);
-                });
-        }
-
         // Kategoriye ait filmleri göster
         function showCategory(category) {
             // Tüm film div'lerini gizle
@@ -137,4 +121,5 @@
         }
     </script>
 </body>
+
 </html>
