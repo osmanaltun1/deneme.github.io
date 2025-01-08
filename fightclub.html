@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="filmtasarım.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Fight Club - Filmizle.com</title>
+</head>
+<body>
+    <header>
+        Filmizlesene.com
+    </header>
+
+    <!-- Şeffaf div alanı -->
+    <div class="film-container">
+        <!-- Oynatıcı Seçenekleri -->
+        <div class="video-options">
+            <button onclick="selectPlayer('gdrive')">Google Drive</button>
+            <button onclick="selectPlayer('sibnet')">Sibnet</button>
+        </div>
+
+        <!-- Video Oynatıcı Alanı -->
+        <div class="video-player-container" id="video-player-container">
+            <!-- Oynatıcı Burada Seçilecek -->
+        </div>
+
+        <!-- IMDb Bilgileri -->
+        <div class="imdb-info">
+            <h3>IMDb Bilgileri</h3>
+            <p><strong>Yıl:</strong> 1999</p>
+            <p><strong>Yönetmen:</strong> David Fincher</p>
+            <p><strong>Tür:</strong> Aksiyon, Dram</p>
+            <p><strong>Puan:</strong> 8.8/10</p>
+            <p><strong>Açıklama:</strong> Fight Club, kişisel kimliğini ve modern toplumun tüketim kültürünü sorgulayan, kült bir filmdir.</p>
+        </div>
+
+        <!-- Yorumlar - Disqus -->
+        <div class="comments-section">
+            <h3>Yorumlar</h3>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = 'https://osmanaltun1.github.io/deneme.github.io/fightclub.html';  // Sayfa URL'si
+                    this.page.identifier = 'fightclub'; // Sayfa kimliği
+                };
+                (function() { 
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://your-disqus-shortname.disqus.com/embed.js';  // Disqus embed scripti
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </div>
+    </div>
+
+    <footer>
+        <p>Filmizlesene.com &copy; 2025</p>
+    </footer>
+
+    <script>
+        function selectPlayer(player) {
+            let playerContainer = document.getElementById('video-player-container');
+            if (player === 'gdrive') {
+                playerContainer.innerHTML = '<iframe width="800" height="450" src="https://drive.google.com/file/d/1oG8W91UO6oCkW1gwAF1KnZwjmUpv2iZC/preview" frameborder="0" allow="autoplay" allowfullscreen></iframe>';
+                playerContainer.style.display = 'block';  // Video oynatıcıyı göster
+            } else if (player === 'sibnet') {
+                playerContainer.innerHTML = '<iframe width="800" height="450" src="https://sibnet.ru/shell.php?version=2&url=your-sibnet-url" frameborder="0" allow="autoplay"></iframe>';
+                playerContainer.style.display = 'block';  // Video oynatıcıyı göster
+            }
+        }
+    </script>
+</body>
+</html>

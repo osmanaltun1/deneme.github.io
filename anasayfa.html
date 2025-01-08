@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tasarım.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Filmizle.com</title>
+    <style>
+        /* Film div'leri başlangıçta hepsi görünsün */
+        .film-option {
+            display: block;
+            /* Sayfa yüklendiğinde tüm film div'lerini göster */
+        }
+
+        /* Seçilen kategoriye ait film div'lerini göster */
+        .show {
+            display: block;
+        }
+
+        /* Diğer film div'lerini gizle */
+        .film-option:not(.show) {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "qpUQlh7IDKssKfF6v",
+            });
+        })();
+    </script>
+
+</head>
+
+<body>
+    <script src="scriptler.js"></script>
+    <header>
+        Filmizlesene.com
+    </header>
+
+    <div class="categories">
+        <button class="category-button" onclick="showCategory('aksiyon')">Aksiyon</button>
+        <button class="category-button" onclick="showCategory('komedi')">Komedi</button>
+        <button class="category-button" onclick="showCategory('dram')">Dram</button>
+        <button class="category-button" onclick="showCategory('bilim')">Bilim Kurgu</button>
+        <button class="category-button" onclick="showCategory('korku')">Korku</button>
+        <button class="category-button" onclick="showCategory('animasyon')">Animasyon</button>
+        <button class="category-button" onclick="showAll()">Tümü</button>
+    </div>
+
+    <div class="container">
+        <main>
+            <!-- Aksiyon Filmleri -->
+            <div class="film-option aksiyon show">
+                <img src="görseller/yıldızlararası.jpg" alt="Aksiyon">
+                <div class="film-title">Interstellar</div>
+            </div>
+            <div class="film-option aksiyon show">
+                <a href="fightclub.html">
+                    <img src="görseller/dovusklubu.jpg" alt="Aksiyon">
+                    <div class="film-title">Fight Club</div>
+                </a>
+            </div>
+            
+
+            <!-- Komedi Filmleri -->
+            <div class="film-option komedi show">
+                <img src="görseller/theshawshankredemption.jpg" alt="Komedi">
+                <div class="film-title">The Shawshank Redemption</div>
+            </div>
+
+            <!-- Dram Filmleri -->
+            <div class="film-option dram show">
+                <img src="görseller/furry.jpg" alt="Dram">
+                <div class="film-title">Fury</div>
+            </div>
+            <div class="film-option dram show">
+                <img src="görseller/erryanikurtarmak.png" alt="Dram">
+                <div class="film-title">Er Ryan'ı Kurtarmak</div>
+            </div>
+
+            <!-- Korku Filmleri -->
+            <div class="film-option korku show">
+                <img src="görseller/theshining.jpg" alt="Korku">
+                <div class="film-title">The Shining</div>
+            </div>
+
+        </main>
+        <aside>
+            <div
+                style="width: 200px; height: 600px; background-color: #ddd; display: flex; align-items: center; justify-content: center; border: 1px dashed #aaa;">
+                Reklam Alanı
+            </div>
+        </aside>
+    </div>
+
+    <div class="film-suggestion">
+        <h2>Hangi filmleri görmek istersiniz?</h2>
+        <p>Film önerilerinizi buraya yazabilirsiniz, size uygun içerikler eklemeye çalışacağız!</p>
+        <input type="text" id="fromName" placeholder="Adınız" required />
+        <textarea id="filmSuggestion" placeholder="Film önerinizi buraya yazın..." required></textarea>
+        <button class="submit-button" onclick="sendEmail()">Gönder</button>
+    </div>
+    <script>
+        // Kategoriye ait filmleri göster
+        function showCategory(category) {
+            // Tüm film div'lerini gizle
+            const filmOptions = document.querySelectorAll('.film-option');
+            filmOptions.forEach(option => option.classList.remove('show'));
+
+            // Seçilen kategoriye ait filmleri göster
+            const categoryFilms = document.querySelectorAll(`.${category}`);
+            categoryFilms.forEach(film => film.classList.add('show'));
+        }
+
+        // Tüm filmleri göster
+        function showAll() {
+            const filmOptions = document.querySelectorAll('.film-option');
+            filmOptions.forEach(option => option.classList.add('show')); // Hepsini göster
+        }
+    </script>
+</body>
+
+</html>

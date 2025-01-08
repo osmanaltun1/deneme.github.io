@@ -1,0 +1,99 @@
+/* Genel ayarlar */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('görseller/arkaplangorsel.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+}
+
+/* Şeffaf div container */
+.film-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Video Seçenekleri */
+.video-options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.video-options button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.video-options button:hover {
+    background-color: #555;
+}
+
+/* Video Oynatıcı */
+.video-player-container {
+    text-align: center;
+    display: none; /* Başlangıçta video oynatıcı gizleniyor */
+}
+
+.youtube-player iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* IMDb Bilgileri */
+.imdb-info {
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.imdb-info h3 {
+    font-size: 1.5em;
+}
+
+.imdb-info p {
+    font-size: 1.1em;
+}
+
+/* Yorumlar */
+.comments-section {
+    width: 100%;
+    margin-top: 30px;
+}
+
+#disqus_thread {
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
