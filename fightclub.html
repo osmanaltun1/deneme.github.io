@@ -8,9 +8,7 @@
     <title>Fight Club - Filmizle.com</title>
 </head>
 <body>
-    <header>
-        Filmizlesene.com
-    </header>
+    <a href="anasayfa.html">Filmizlesene.com</a>
 
     <!-- Şeffaf div alanı -->
     <div class="film-container">
@@ -35,23 +33,24 @@
             <p><strong>Açıklama:</strong> Fight Club, kişisel kimliğini ve modern toplumun tüketim kültürünü sorgulayan, kült bir filmdir.</p>
         </div>
 
-        <!-- Yorumlar - Disqus -->
-        <div class="comments-section">
-            <h3>Yorumlar</h3>
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = 'https://osmanaltun1.github.io/deneme.github.io/fightclub.html';  // Sayfa URL'si
-                    this.page.identifier = 'fightclub'; // Sayfa kimliği
-                };
-                (function() { 
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://your-disqus-shortname.disqus.com/embed.js';  // Disqus embed scripti
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-        </div>
+       <!-- Yorumlar - Disqus -->
+<div class="comments-section">
+    <h3>Yorumlar</h3>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'https://osmanaltun1.github.io/deneme.github.io/fightclub.html';  // Sayfa URL'si
+            this.page.identifier = 'fightclub'; // Sayfa kimliği
+        };
+        (function() { 
+            var d = document, s = d.createElement('script');
+            s.src = 'https://filmizlesene.disqus.com/embed.js';  // Disqus embed scripti
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</div>
+
     </div>
 
     <footer>
